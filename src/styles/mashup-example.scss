@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .template-example {
   margin-bottom: 30px;
   .template-title-example {
@@ -36,10 +40,15 @@
   }
 }
 
+.background-image-container img {
+  width: 50%;
+}
+
 .pricing-plan {
   border: 1px solid $brand-primary;
   height: 400px;
-  border-radius: $border-radius-large;
+  overflow: hidden;
+  border-radius: 15px;
   margin-bottom: 25px;
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 
@@ -72,4 +81,19 @@
     font-size: $font-size-small;
     list-style-position: inside;
   }
+}
+
+.footer-container {
+  p {
+    font-size: $font-size-small;
+    margin-bottom: 0;
+  }
+
+  .social-links {
+    margin: 15px 0;
+  }
+}
+
+.copyrights {
+  color: #85a343 !important;
 }

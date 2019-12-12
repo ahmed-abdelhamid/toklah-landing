@@ -1,27 +1,27 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
-const recursive = require('recursive-readdir-sync')
-const srcDir = path.resolve(__dirname, '..', 'src')
-const distDir = path.resolve(__dirname, '..', 'dist')
-const { NODE_ENV = 'development' } = process.env
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+const recursive = require('recursive-readdir-sync');
+const srcDir = path.resolve(__dirname, '..', 'src');
+const distDir = path.resolve(__dirname, '..', 'dist');
+const { NODE_ENV = 'development' } = process.env;
 
 function getPagesPath() {
   try {
-    var files = recursive('./src/pages')
+    var files = recursive('./src/pages');
   } catch (err) {
     if (err.errno === 34) {
-      console.log('Path does not exist')
+      console.log('Path does not exist');
     } else {
       // something unrelated went wrong, rethrow
-      throw err
+      throw err;
     }
   }
 
-  return files.filter(page => page.match(/.hbs$/))
+  return files.filter(page => page.match(/.hbs$/));
 }
 
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
     publicPath: './',
     // At some point you'll have to debug your code, that's why I'm giving you
     // for free a source map file to make your life easier
-    sourceMapFilename: 'main.[hash:8].map'
+    sourceMapFilename: 'main.[hash:8].map',
   },
 
   module: {
@@ -53,7 +53,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-        include: srcDir
+        include: srcDir,
       },
       {
         test: /\.scss$/,
@@ -66,48 +66,48 @@ module.exports = {
               options: {
                 minimize: true,
                 sourceMap: true,
-                root: path.join(__dirname, '..', 'src')
-              }
+                root: path.join(__dirname, '..', 'src'),
+              },
             },
-            { loader: 'sass-loader' }
-          ]
-        })
+            { loader: 'sass-loader' },
+          ],
+        }),
       },
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         query: {
           partialDirs: [path.join(srcDir, 'templates', 'partials')],
-          helperDirs: [path.join(srcDir, 'templates', 'helpers')]
-        }
+          helperDirs: [path.join(srcDir, 'templates', 'helpers')],
+        },
       },
       {
         test: /\.(eot?.+|svg?.+|ttf?.+|otf?.+|ico?.+|zip?.+|woff?.+|woff2?.+)$/,
-        use: 'file-loader?name=[path][name].[ext]'
+        use: 'file-loader?name=[path][name].[ext]',
       },
       {
         test: /\.(jpg|jpeg|png|gif|ico)$/,
         use: [
           // if less than 10Kb, bundle the asset inline, if greater, copy it to the dist/assets
           // folder using file-loader
-          'url-loader?limit=1024&name=[path][name].[ext]'
+          'url-loader?limit=1024&name=[path][name].[ext]',
         ],
-        include: path.resolve(srcDir, 'assets')
-      }
-    ]
+        include: path.resolve(srcDir, 'assets'),
+      },
+    ],
   },
 
   plugins: getPagesPath().reduce(
     (memo, name) => {
-      const filename = name.match(/\/pages\/(.+).hbs$/)
+      const filename = name.match(/\\pages\\(.+).hbs$/);
       memo.push(
         new HtmlWebpackPlugin({
           filename: filename[1] + '.html',
           template: path.join(__dirname, '..', name),
-          path: distDir
+          path: distDir,
         })
-      )
-      return memo
+      );
+      return memo;
     },
     [
       new webpack.optimize.ModuleConcatenationPlugin(),
@@ -115,11 +115,11 @@ module.exports = {
       // environment globals added must be added to .eslintrc
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify(NODE_ENV)
+          NODE_ENV: JSON.stringify(NODE_ENV),
         },
         NODE_ENV: NODE_ENV,
         __DEV__: NODE_ENV === 'development',
-        __PROD__: NODE_ENV === 'production'
+        __PROD__: NODE_ENV === 'production',
       }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -132,32 +132,32 @@ module.exports = {
           dead_code: true,
           evaluate: true,
           if_return: true,
-          join_vars: true
+          join_vars: true,
         },
         output: {
-          comments: false
-        }
+          comments: false,
+        },
       }),
       // Put all css code in this file
       new ExtractTextPlugin({
         filename: '[name].[contenthash:8].css',
-        allChunks: true
+        allChunks: true,
       }),
       new CompressionPlugin({
         asset: '[path].gz[query]',
         algorithm: 'gzip',
         test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
-        threshold: 10240 // Only assets bigger than this size are processed
+        threshold: 10240, // Only assets bigger than this size are processed
       }),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
-        'window.jQuery': 'jquery'
+        'window.jQuery': 'jquery',
       }),
       new Dotenv({
         path: path.resolve(__dirname, '..', '.env'),
-        safe: false
-      })
+        safe: false,
+      }),
     ]
-  )
-}
+  ),
+};
