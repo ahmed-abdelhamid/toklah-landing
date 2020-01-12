@@ -1,4 +1,4 @@
-.card{
+.card {
   background: white;
   padding: 2rem;
   position: relative;
@@ -8,13 +8,11 @@
   }
 }
 
-.card-container{
-  .card-image{
+.card-container {
+  .card-image {
     height: 400px;
     margin-top: -20%;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
   }
-  
 }
-
