@@ -15,6 +15,7 @@
     "lint": "eslint src config",
     "lint:fix": "npm run lint -- --fix",
     "deploy:now": "npm run build && cd dist && now --prod -p -n toklah  && cd ..",
+    "deploy:direct": "cd dist && now --prod -p -n toklah  && cd ..",
     "deploy:gae:staging": "npm run build && gcloud app deploy --version=staging --no-promote && gcloud app browse && gcloud app logs tail -s default",
     "deploy:gae:production": "npm run build && gcloud app deploy --version production && gcloud app browse && gcloud app logs tail -s default"
   },

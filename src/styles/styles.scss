@@ -2,33 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.template-example {
-  margin-bottom: 30px;
-  .template-title-example {
-    font-weight: normal;
-    color: #34495e;
-
-    &:after {
-      display: none;
-    }
-  }
-  h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-
-  .table > tbody > tr > td,
-  .table > tbody > tr > th,
-  .table > tfoot > tr > td,
-  .table > tfoot > tr > th,
-  .table > thead > tr > td,
-  .table > thead > tr > th {
-    padding: 0 15px;
-  }
-}
-
 .list-icons {
   list-style: none;
   margin: 0;
@@ -42,6 +15,21 @@ html {
 
 .background-image-container img {
   width: 50%;
+  padding-top: 25px;
+}
+
+#services,
+#pricing,
+#contact {
+  padding-top: 0;
+}
+
+#about h2 {
+  color: $brand-primary;
+}
+
+#about h2:after {
+  color: $brand-primary;
 }
 
 .pricing-plan {
@@ -96,4 +84,18 @@ html {
 
 .copyrights {
   color: #85a343 !important;
+}
+
+.white {
+  background-color: #fff;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
 }

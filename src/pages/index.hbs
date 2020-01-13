@@ -1,6 +1,11 @@
 {{> metaHeader title='تكله' description="Toklah"}} 
 {{> header }}
 
+<!-- The video -->
+<video autoplay muted loop id="background-video">
+  <source src="../assets/videos/background.mp4" type="video/mp4">
+</video>
+
 <!-- Add your site or app content here -->
   <div class="hero-full-container background-image-container white-text-container">
     <div class="container">
@@ -12,7 +17,7 @@
     </div>
   </div>
 
-  <div class="section-container" id="about">
+  <div class="section-container white" id="about">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
@@ -132,7 +137,7 @@
       </div>
       <div class="row reveal">
         <div class="col-xs-12 col-md-4 col-md-offset-2">
-          <div class="pricing-plan">
+          <div class="pricing-plan white">
             <div class="pricing-plan__header">
               <h3>الباقة الأساسية</h3>
               <h4>Basic</h4>
@@ -147,7 +152,7 @@
         </div>
        
         <div class="col-xs-12 col-md-4">
-          <div class="pricing-plan">
+          <div class="pricing-plan white">
             <div class="pricing-plan__header">
               <h3>الباقة الممتازة</h3>
               <h4>Premium</h4>
@@ -201,7 +206,7 @@
             tempor incididunt ut labore et dolore magna aliqua.</p> --}}
           </div>
           <div class="card-container">
-            <div class="card card-shadow col-xs-5 col-xs-offset-1 col-md-5 col-xs-offset-3 reveal">
+            <div class="card card-shadow col-xs-12 reveal">
               <form action="" class="reveal-content">
                 <div class="row">
                   <div class="col-md-12">
@@ -222,7 +227,7 @@
                 </div>
               </form>
             </div>
-            <div class="card-image col-xs-12" style="background-image: url('/assets/images/complaints.png')"></div>
+            {{!-- <div class="card-image col-xs-12" style="background-image: url('/assets/images/complaints.png')"></div> --}}
           </div>
         </div>  
       </div>
