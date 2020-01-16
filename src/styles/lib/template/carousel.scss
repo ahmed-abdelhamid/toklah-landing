@@ -1,50 +1,48 @@
-
-
 .carousel-fade {
   .carousel-inner {
-      .item {
-          transition-property: opacity;
-      }
-      
-      .item,
-      .active.left,
-      .active.right {
-          opacity: 0;
-      }
+    .item {
+      transition-property: opacity;
+    }
 
-      .active,
-      .next.left,
-      .prev.right {
-          opacity: 1;
-      }
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
 
-      .next,
-      .prev,
-      .active.left,
-      .active.right {
-          left: 0;
-          transform: translate3d(0, 0, 0);
-      }
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .carousel-control {
-      z-index: 2;
+    z-index: 2;
   }
 }
 
-.carousel-inner{
+.carousel-inner {
   overflow: inherit;
 }
 
-
-.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
   max-width: 100%;
   @media (min-width: $screen-md) {
     max-width: 80%;
   }
 }
 
-.carousel-caption{
+.carousel-caption {
   color: $text-color;
   text-shadow: none;
   position: relative;
@@ -54,6 +52,7 @@
   left: inherit;
   right: inherit;
   bottom: inherit;
+  border-radius: 10px;
 
   @media (min-width: $screen-md-min) {
     padding: 5rem;
@@ -62,7 +61,7 @@
   }
 }
 
-.carousel-control{
+.carousel-control {
   height: 32px;
   background: none;
   left: initial;
@@ -76,10 +75,11 @@
     top: 75px;
   }
 
-  &:hover, &:focus{
+  &:hover,
+  &:focus {
     color: $link-color;
   }
-  &.right{
+  &.right {
     left: 5rem;
     margin-left: 32px;
 
@@ -89,7 +89,7 @@
     }
     background-image: none;
   }
-  &.left{
+  &.left {
     // margin-right: 32px;
     background-image: none;
   }
