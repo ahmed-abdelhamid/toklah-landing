@@ -1,109 +1,84 @@
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
-
-@media only screen and (max-width: 768px) {
-  .navbar-nav {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+.navbar-nav {
+	@media only screen and (max-width: 768px) {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
 }
 
 .list-icons {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  li {
-    float: left;
-    margin-right: 5px;
-  }
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	li {
+		float: left;
+		margin-right: 5px;
+	}
 }
 
 .background-image-container img {
-  width: 50%;
-  padding-top: 25px;
+	width: 50%;
+	padding-top: 25px;
 }
 
 #services,
 #pricing,
 #contact {
-  padding-top: 0;
+	padding-top: 0;
 }
 
 #about h2 {
-  color: $brand-primary;
+	color: $brand-primary;
 }
 
 #about h2:after {
-  color: $brand-primary;
+	color: $brand-primary;
 }
 
-.pricing-plan {
-  border: 1px solid $brand-primary;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 15px;
-  margin-bottom: 25px;
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+.stores {
+	display: flex;
+	justify-content: center;
 
-  .pricing-plan__header {
-    margin-bottom: 20px;
-    padding-bottom: $padding-large-vertical;
-    background-color: $gray-dark;
+	@media screen and (max-width: $screen-phone) {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    h3 {
-      padding-top: $padding-base-vertical;
-    }
-
-    h3,
-    h4 {
-      color: #fff;
-      margin-top: 0;
-    }
-
-    span {
-      font-weight: bold;
-      color: $brand-warning;
-      font-size: $font-size-large;
-    }
-  }
-
-  ul {
-    text-align: right;
-    direction: rtl;
-    padding: $padding-base-vertical $padding-base-horizontal;
-    font-size: $font-size-small;
-    list-style-position: inside;
-  }
+	img {
+		margin: 10px 25px;
+		width: 150px;
+	}
 }
 
 .footer-container {
-  p {
-    font-size: $font-size-small;
-    margin-bottom: 0;
-  }
+	p {
+		font-size: $font-size-small;
+		margin-bottom: 0;
+	}
 
-  .social-links {
-    margin: 15px 0;
-  }
+	.social-links {
+		margin: 15px 0;
+	}
 }
 
 .copyrights {
-  color: #85a343 !important;
+	color: #85a343 !important;
 }
 
 .white {
-  background-color: #fff;
+	background-color: #fff;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
 #background-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -100;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -100;
 }
