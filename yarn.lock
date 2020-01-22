@@ -201,7 +201,7 @@ async-foreach@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
 
-async@0.2.x, async@~0.2.10, async@~0.2.6:
+async@0.2.x, async@~0.2.10:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
 
@@ -1273,6 +1273,10 @@ commander@2.11.x, commander@^2.8.1, commander@~2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
+commander@~2.20.3:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -1405,6 +1409,12 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-env@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-6.0.3.tgz#4256b71e49b3a40637a0ce70768a6ef5c72ae941"
+  dependencies:
+    cross-spawn "^7.0.0"
+
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -1419,6 +1429,14 @@ cross-spawn@^5.0.1, cross-spawn@^5.1.0:
     lru-cache "^4.0.1"
     shebang-command "^1.2.0"
     which "^1.2.9"
+
+cross-spawn@^7.0.0:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
+  dependencies:
+    path-key "^3.1.0"
+    shebang-command "^2.0.0"
+    which "^2.0.1"
 
 cryptiles@2.x.x:
   version "2.0.5"
@@ -1729,6 +1747,22 @@ domutils@1.5.1:
   dependencies:
     dom-serializer "0"
     domelementtype "1"
+
+dotenv-defaults@^1.0.2:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/dotenv-defaults/-/dotenv-defaults-1.1.1.tgz#032c024f4b5906d9990eb06d722dc74cc60ec1bd"
+  dependencies:
+    dotenv "^6.2.0"
+
+dotenv-webpack@^1.5.4:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-1.7.0.tgz#4384d8c57ee6f405c296278c14a9f9167856d3a1"
+  dependencies:
+    dotenv-defaults "^1.0.2"
+
+dotenv@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -2412,14 +2446,15 @@ handlebars-loader@^1.5.0:
     loader-utils "1.0.x"
     object-assign "^4.1.0"
 
-handlebars@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-3.0.3.tgz#0e09651a2f0fb3c949160583710d551f92e6d2ad"
+handlebars@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.3.0.tgz#427391b584626c9c9c6ffb7d1fb90aa9789221cc"
   dependencies:
+    neo-async "^2.6.0"
     optimist "^0.6.1"
-    source-map "^0.1.40"
+    source-map "^0.6.1"
   optionalDependencies:
-    uglify-js "~2.3"
+    uglify-js "^3.1.4"
 
 har-schema@^1.0.5:
   version "1.0.5"
@@ -3314,6 +3349,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+neo-async@^2.6.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
+
 no-case@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"
@@ -3545,12 +3584,6 @@ optimist@^0.6.1:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
-optimist@~0.3.5:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz#c90941ad59e4273328923074d2cf2e7cbc6ec0d9"
-  dependencies:
-    wordwrap "~0.0.2"
-
 optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
@@ -3683,6 +3716,10 @@ path-is-inside@^1.0.1, path-is-inside@^1.0.2:
 path-key@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
+
+path-key@^3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
 
 path-parse@^1.0.5:
   version "1.0.5"
@@ -4239,6 +4276,10 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
+recursive-readdir-sync@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/recursive-readdir-sync/-/recursive-readdir-sync-1.0.6.tgz#1dbf6d32f3c5bb8d3cde97a6c588d547a9e13d56"
+
 redent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
@@ -4476,6 +4517,10 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+scrollreveal@^3.3.6:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/scrollreveal/-/scrollreveal-3.4.0.tgz#77ce77b383d1883f2aafebdfc6f17a105718a780"
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
@@ -4577,9 +4622,19 @@ shebang-command@^1.2.0:
   dependencies:
     shebang-regex "^1.0.0"
 
+shebang-command@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
+  dependencies:
+    shebang-regex "^3.0.0"
+
 shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
+
+shebang-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -4641,17 +4696,15 @@ source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, sourc
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
-source-map@^0.1.40, source-map@~0.1.7:
-  version "0.1.43"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
-  dependencies:
-    amdefine ">=0.0.4"
-
 source-map@^0.4.2:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
+
+source-map@^0.6.1, source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
 spdx-correct@~1.0.0:
   version "1.0.2"
@@ -4981,13 +5034,12 @@ uglify-js@^2.8.29:
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
 
-uglify-js@~2.3:
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.3.6.tgz#fa0984770b428b7a9b2a8058f46355d14fef211a"
+uglify-js@^3.1.4:
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.6.tgz#0783daa867d4bc962a37cc92f67f6e3238c47485"
   dependencies:
-    async "~0.2.6"
-    optimist "~0.3.5"
-    source-map "~0.1.7"
+    commander "~2.20.3"
+    source-map "~0.6.1"
 
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
@@ -5231,6 +5283,12 @@ which-module@^2.0.0:
 which@1, which@^1.2.9:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
+  dependencies:
+    isexe "^2.0.0"
+
+which@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/which/-/which-2.0.2.tgz#7c6a8dd0a636a0327e10b59c9286eee93f3f51b1"
   dependencies:
     isexe "^2.0.0"
 
